@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "FDT2k\\Libs\\Database\\": "src/"
+            "FDT2k\\Libs\\": "src/"
         }
     }
 }
