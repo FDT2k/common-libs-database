@@ -49,7 +49,7 @@ abstract class Database extends \FDT2k\ICE\CORE\IObject {
 
 						$protocol = 'IMSQLiteDatabase';
 					}else{
-						$protocol = "ICE\lib\database\Database".strtoupper ($URI->protocol);
+						$protocol = "Database".strtoupper ($URI->protocol);
 					}
 
 					$config = 'database';
