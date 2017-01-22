@@ -26,7 +26,7 @@ class DatabaseMYSQLI extends Database{
 		}else{
 
 			$this->error = ERROR_NOT_CONNECTED;
-			throw new \ICE\core\Exception('can\'t connect to database',0);
+			throw new DatabaseException('can\'t connect to database',0);
 		}
 
 
@@ -43,7 +43,7 @@ class DatabaseMYSQLI extends Database{
 		$this->error = ERROR_NO_ERROR;
 		if(!mysqli_select_db($this->handler,$database)){
 			$this->error = ERROR_DATABASE_NOT_FOUND;
-			throw new  \ICE\core\Exception(sprintf(__('database "%s" not found'),$database),0);
+			throw new  DatabaseException(sprintf(__('database "%s" not found'),$database),0);
 			return false;
 		}
 		$this->db=$database;
