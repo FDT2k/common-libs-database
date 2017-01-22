@@ -1,8 +1,8 @@
 <?
 namespace FDT2k\Libs;
 
-use \ICE\lib\helpers as helpers;
-use \ICE\Env as Env;
+use \FDT2k\Helpers as helpers;
+use \FDT2k\ICE\CORE\Env as Env;
 
 class SQLCache extends \FDT2k\ICE\CORE\IObject{
 
