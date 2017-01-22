@@ -13,7 +13,7 @@ class DatabaseMYSQLI extends Database{
 		$this->error = ERROR_NO_ERROR;
 		Env::getLogger('sql')->startLog('Connecting to '.$user.'@'.$server.'/'.$db.' :'.$this->getOption('forceNewLink') );
 
-		if($this->handler = mysqli_connect($server,$user,$password,$this->database,$this->port)){
+		if($this->handler = @mysqli_connect($server,$user,$password,$this->database,$this->port)){
 
 			$this->bConnected = true;
 			if($charset = $this->getOption('clientCharset')){
