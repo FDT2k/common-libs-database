@@ -4,7 +4,7 @@ namespace FDT2k\Libs;
 use \ICE\lib\helpers as helpers;
 use \ICE\Env as Env;
 
-class SQLCache extends \ICE\core\IObject{
+class SQLCache extends \FDT2k\ICE\CORE\IObject{
 
 	protected $sQueryID;
 	protected $rowpointer;
