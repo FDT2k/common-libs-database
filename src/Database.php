@@ -50,7 +50,7 @@ abstract class Database extends \FDT2k\ICE\CORE\IObject {
 						$protocol = 'IMSQLiteDatabase';
 					}else{
 						$protocol = __NAMESPACE__."\Database".strtoupper ($URI->protocol);
-					}
+					} 
 
 					$config = 'database';
 
