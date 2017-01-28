@@ -16,12 +16,12 @@
         }
     },
     "require": {
-        "fdt2k/baseobject":"*",
+        "fdt2k/baseobject":"*"
 
 
     },
     "repositories": [
-      
+
         {
             "type": "vcs",
             "url": "https://git.geekagency.ch/FDT2k/php-root-object.git"
