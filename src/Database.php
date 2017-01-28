@@ -8,7 +8,7 @@ define('DB_TYPE_MYSQL',1);
 define('DB_TYPE_MSSQL',2);
 define('DB_TYPE_MYSQLI',4);
 define ('ERROR_NO_ERROR',0);
-abstract class Database extends \FDT2k\ICE\CORE\IObject {
+abstract class Database extends \FDT2kIObject {
 	protected $handler;
 	protected $affectedRows;
 	protected $typeToConvertCharset;
