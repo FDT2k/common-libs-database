@@ -271,7 +271,7 @@ var_dump($sql);
 					if(preg_match($regex,$line,$matches)){
 						list($crap,$crap,$key,$referenced_table,$referenced_field) = $matches;
 				//	var_dump($crap,$crap,$key,$referenced_table,$referenced_field);
-						$fkD = new sf\ForeignKeyDescriptor(new sf\FieldDescriptor($table,$key),new sf\FieldDescriptor($referenced_table,$referenced_field));
+						$fkD = new ForeignKeyDescriptor(new FieldDescriptor($table,$key),new FieldDescriptor($referenced_table,$referenced_field));
 						$this->foreignKeys[$table][$key]=$fkD;
 					}
 				}
