@@ -70,51 +70,6 @@ class DatabaseMYSQLI extends Database{
 		return $tables;
 	}
 
-/*	function tableExists($table){
-		$tables = $this->getTables();
-		return in_array($table,$tables);
-	}
-*/
-	function createTable($table,$ifNotExists=true){
-		$sql ="CREATE TABLE  ".($ifNotExists?"IF NOT EXISTS":"")." ".$this->convertStringSQL($table).";";
-		var_dump($sql);
-		return $this->executeUpdate($sql);
-
-	}
-
-	function updateOrCreateTable($table,$fields){
-		/*
-
-		*/
-	//	var_dump($fields);
-		//copy the table if it exists;
-		$this->executeUpdate('START TRANSACTION;');
-		$table_exists = $this->tableExists($table);
-		$cmd = "CREATE TABLE ".$this->convertStringSQL($table);
-		if($table_exists){
-			$current_fields = $this->getFieldsByName($table);
-	//	var_dump($current_fields);
-			//$cmd = "ALTER TABLE";
-			$sql .=" CREATE TABLE ".$this->convertStringSQL($table.'_tmp')." LIKE ".$this->convertStringSQL($table).";\n";
-			$sql .= "INSERT ".$this->convertStringSQL($table.'_tmp')." SELECT * FROM ".$this->convertStringSQL($table).";\n";
-
-			$fields_to_add = array_diff_key($fields,$current_fields);
-			$fields_to_remove=  array_diff_key($current_fields,$fields);
-			var_dump($fields_to_add);
-			var_dump($fields_to_remove);
-			// add the new fields
-			$sql.="ALTER TABLE ".$this->convertStringSQL($table.'_tmp')."\n";
-			foreach($fields_to_add as $field){
-				$sql.="ADD COLUMN ".$field['Field']." ".$field['Type']." DEFAULT 0\n";
-			}
-			$sql.=";";
-		}
-		//create inexistent fields in the new table;
-var_dump($sql);
-		//do the data migration
-
-		//
-	}
 
 
 	public function executeQuery($query,$iTTL=0){
