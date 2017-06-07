@@ -1,4 +1,4 @@
-<?
+<?php
 namespace FDT2k\Libs;
 
 use \FDT2k\Helpers as helpers;
@@ -231,5 +231,3 @@ class SQLCache extends \IObject{
 	}
 
 }
-
-?>
